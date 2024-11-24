@@ -233,7 +233,7 @@ const HomePage = () => {
           </div>
 
           <a 
-            href="https://www.instagram.com/direct/t/17847090542819053/" 
+            href="https://www.instagram.com/jingle.gings/" 
             target="_blank" 
             rel="noopener noreferrer"
             className="cta-button"
