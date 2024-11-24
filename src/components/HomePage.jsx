@@ -1,18 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './HomePage.css';
 
 const HomePage = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <div className="home-container">
       <header className="header">
         <h1 className="logo">JingleGings</h1>
-        <nav>
+        <button className="menu-toggle" onClick={toggleMenu} aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav className={`main-nav ${isMenuOpen ? 'is-open' : ''}`}>
           <ul>
-            <li><a href="#perfect-for">Ótimos para</a></li>
-            <li><a href="#prices">Preços</a></li>
-            <li><a href="#house-kit">Kit Casinha</a></li>
-            <li><a href="#gallery">Galeria</a></li>
-            <li><a href="#contact">Contato</a></li>
+            <li><a href="#perfect-for" onClick={toggleMenu}>Ótimos para</a></li>
+            <li><a href="#prices" onClick={toggleMenu}>Preços</a></li>
+            <li><a href="#house-kit" onClick={toggleMenu}>Kit Casinha</a></li>
+            <li><a href="#gallery" onClick={toggleMenu}>Galeria</a></li>
+            <li><a href="#contact" onClick={toggleMenu}>Contato</a></li>
           </ul>
         </nav>
       </header>
@@ -185,8 +196,6 @@ const HomePage = () => {
                 className="contact-link"
               >
                 @jingle.gings
-                
-
               </a>
             </p>
             <p className="contact-item">
@@ -202,8 +211,6 @@ const HomePage = () => {
                 className="contact-link"
               >
                @_manuffreire_
-                
-
               </a>
             </p>
             
@@ -244,4 +251,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
